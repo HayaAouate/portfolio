@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VelikoController!{% endblock %}
+
+{% block body %}
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: 'Arial', sans-serif;  /* Police moderne et lisible */
+            background-color: #f4f4f9;        /* Couleur de fond douce */
+            color: #333;                      /* Couleur de texte gris foncé */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Conteneur Flexbox pour aligner les éléments en colonne et les centrer */
+        .center-wrapper {
+            display: flex;
+            flex-direction: column;          /* Aligner les éléments (images et texte) en colonne */
+            justify-content: flex-start;     /* Aligner les éléments en haut */
+            align-items: center;             /* Centre les éléments horizontalement */
+            text-align: center;              /* Centre le texte */
+            gap: 20px;                       /* Espacement réduit entre chaque élément */
+            padding: 40px 20px;              /* Marge intérieure */
+        }
+
+        /* Styles pour les titres */
+        h1 {
+            font-size: 3rem;
+            color: #DD7835;                  /* Couleur orange chaud */
+            margin: 0;                       /* Supprime la marge sous le titre */
+            text-transform: uppercase;       /* Texte en majuscule */
+            letter-spacing: 2px;             /* Espacement des lettres */
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #444;                     /* Couleur plus claire pour le sous-titre */
+            font-weight: 400;
+            margin-top: 5px;                 /* Réduit l'espace entre h1 et h3 */
+        }
+
+        /* Style pour le lien GitHub */
+        a {
+            text-decoration: none;
+            color: #2196f3;                  /* Bleu vif pour attirer l'attention */
+            font-size: 1rem;
+            border: 2px solid #2196f3;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;       /* Transition fluide pour les effets */
+        }
+
+        a:hover {
+            background-color: #2196f3;
+            color: #fff;
+        }
+
+        /* Styles pour les paragraphes */
+        p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            line-height: 1.6;
+            margin: 0 auto;
+            margin-top: 10px;                /* Réduit l'espace entre le texte et le titre */
+        }
+
+        /* Ajout de bordures arrondies et d'ombres portées pour les images */
+        .center-wrapper img {
+            width: 600px;
+            height: auto;
+            border-radius: 10px;               /* Bordures arrondies */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Ombre douce sous les images */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effet de transformation */
+        }
+
+        .center-wrapper img:hover {
+            transform: scale(1.05);          /* Agrandir légèrement l'image au survol */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+        }
+    </style>
+
+    <div class="center-wrapper">
+        <h1>Pizza</h1>
+        <h3>SITE WEB DE CARTE DE PIZZA</h3>
+        <a href="https://github.com/ort-montreuil/BTS-SIO-G12-2025-VELIKO-Web">lien GitHub</a>
+        <div>
+            <p>
+                Développement d'un site web de carte de pizza pour l'enseigne Pizza Mama.<br>
+                Projet avec Python et Django qui permet une simplification de la gestion de la partie admin.
+            </p>
+            <br>
+            <div><img src="{{ asset('assets/img/projets/pizzamama/Screenshot 2024-11-15 092032.png') }}" alt="Présentation" />
+            </div><br><br>
+            <div><img src="{{ asset('assets/img/projets/pizzamama/Screenshot 2024-11-15 092139.png') }}" alt="Présentation" />
+            </div>
+        </div>
+    </div>
+{% endblock %}

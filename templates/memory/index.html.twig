@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MemoryController!{% endblock %}
+
+{% block body %}
+    <style>
+        /* Conteneur Flexbox pour aligner les éléments en colonne */
+        .center-wrapper {
+            display: flex;
+            flex-direction: column;        /* Aligner les éléments en colonne */
+            justify-content: flex-start;   /* Aligner les éléments en haut */
+            align-items: center;           /* Centre les éléments horizontalement */
+            text-align: center;            /* Centre le texte */
+            gap: 30px;                     /* Espacement de 30px entre chaque élément */
+            padding: 40px 20px;            /* Marge intérieure */
+        }
+
+        /* Réduire l'espace entre le titre et le texte */
+        h1 {
+            font-size: 3rem;
+            color: black;
+            margin: 0;                     /* Enlever la marge sous le titre */
+            text-transform: uppercase;     /* Texte en majuscule */
+            letter-spacing: 2px;           /* Espacement des lettres */
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #444;                   /* Couleur plus claire pour le sous-titre */
+            font-weight: 400;
+            margin-top: 5px;               /* Réduit l'espace entre h1 et h3 */
+        }
+
+        /* Style pour le lien GitHub */
+        a {
+            text-decoration: none;
+            color: #2196f3;                /* Bleu vif pour attirer l'attention */
+            font-size: 1rem;
+            border: 2px solid #2196f3;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;     /* Transition fluide pour les effets */
+            margin-top: 10px;              /* Ajout d'un petit espace entre le texte et le lien */
+        }
+
+        a:hover {
+            background-color: #2196f3;
+            color: #fff;
+        }
+
+        /* Définir la taille des images et espacement entre elles */
+        .center-wrapper img {
+            width: 600px;     /* Largeur de l'image fixée à 600px */
+            height: auto;     /* Maintient la proportion des images */
+            margin-bottom: 20px; /* Espacement entre les images */
+            border-radius: 10px;  /* Bordures arrondies */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Ombre douce sous les images */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effet de transformation */
+        }
+
+        .center-wrapper img:hover {
+            transform: scale(1.05);      /* Agrandir légèrement l'image au survol */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+        }
+
+        /* Style pour les paragraphes */
+        p {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6;
+            max-width: 900px;  /* Limiter la largeur du texte pour une meilleure lisibilité */
+            margin: 0 auto;    /* Centrer le texte */
+        }
+
+        /* Liste des fonctionnalités et technologies avec des flèches */
+        .features, .technologies {
+            list-style: none;  /* Enlever les puces par défaut */
+            padding-left: 0;    /* Enlever le padding */
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        .features li, .technologies li {
+            position: relative;  /* Pour ajouter une flèche avant chaque élément */
+            padding-left: 30px;   /* Ajouter de l'espace avant le texte */
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .features li::before, .technologies li::before {
+            content: '→';         /* Flèche pour les éléments */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.3rem;
+            color: #2196f3;       /* Couleur de la flèche */
+        }
+
+        /* Pour le titre des sections de liste */
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+    </style>
+
+    <div class="center-wrapper">
+        <h1>TP MEMORY</h1>
+        <h3>JEU DU MEMORY</h3>
+        <a href="https://github.com/HayaAouate/JAVA-JEU-DU-MEMORY">lien GitHub</a>
+
+        <div class="center-wrapper">
+            <p>
+                Le jeu Memory est une application de jeu classique où l'utilisateur doit retrouver des paires de cartes identiques. L'application utilise JavaFX pour l'interface graphique, permettant ainsi une interaction fluide et visuelle avec le joueur.
+            </p>
+        </div>
+        <p>{{ result }}</p>
+
+        <!-- Image du jeu -->
+        <img src="{{ asset('assets/img/projets/memory/capture.png') }}" alt="Capture du jeu MEMORY"/>
+
+        <!-- Fonctionnalités -->
+        <div class="center-wrapper">
+            <p class="section-title">Fonctionnalités principales :</p>
+            <ul class="features">
+                <li>Plateau de jeu : Un ensemble de 16 cartes est affiché sous forme de grille, avec des images retournées initialement. L'utilisateur clique sur les cartes pour les retourner.</li>
+                <li>Logique de jeu : L'objectif est de trouver toutes les paires de cartes identiques. Lorsque l'utilisateur retourne deux cartes, elles sont comparées. Si elles sont identiques, elles restent visibles ; sinon, elles sont retournées à l'envers après un délai.</li>
+                <li>Suivi des performances : Le jeu compte le nombre de coups effectués par le joueur et affiche un score dans l'interface.</li>
+                <li>Réinitialisation automatique : Lorsque toutes les paires sont trouvées, une alerte apparaît pour signaler la fin de la partie, et le jeu recommence automatiquement.</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <style>
+
+    .center-wrapper {
+    display: flex;
+    justify-content: center;      /* Centre horizontalement */
+    align-items: center;          /* Centre verticalement */
+    height: 100vh;                /* Prend toute la hauteur de la page */
+    text-align: center;           /* Centre les éléments à l'intérieur */
+    }
+    /* Pour rendre le champ Message un carré */
+    textarea.form-control {
+        width: 100%; /* Occupe toute la largeur disponible */
+        max-width: 400px;  /* La largeur maximum du carré */
+        height: 400px;     /* Hauteur égale à la largeur pour obtenir un carré */
+        resize: none;      /* Empêche l'utilisateur de redimensionner le champ */
+        padding: 18px;     /* Ajoute de l'espace interne pour le texte */
+        border-radius: 8px;/* Coins arrondis */
+        border: 1px solid #ddd; /* Bordure grise */
+        font-size: 16px;   /* Taille de texte agréable */
+        line-height: 1.5;  /* Hauteur de ligne pour que le texte soit bien espacé */
+    }
+
+    /* Pour les marges et le centrage du formulaire */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    </style>
+{% endblock %}
